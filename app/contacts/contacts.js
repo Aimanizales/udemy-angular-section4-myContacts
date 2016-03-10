@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 angular.module('myContacts.contacts', ['ngRoute', 'firebase'])
 
@@ -18,12 +18,12 @@ angular.module('myContacts.contacts', ['ngRoute', 'firebase'])
 	//When clicking in new contact button:
 	$scope.showAddForm = function (b) {
 		$scope.isAddFormShowing = b;
-	}
+	};
 
 	//
 	$scope.editContact = function (b) {
 		$scope.isEditContactShowing = b;
-	}
+	};
 
 	//
 	$scope.addFormSubmit = function () {
@@ -63,8 +63,8 @@ angular.module('myContacts.contacts', ['ngRoute', 'firebase'])
 
 			$scope.isAddFormShowing = false;
 			$scope.msg = "Contact Added";
-		})
-	}
+		});
+	};
 
 	//
 	$scope.clearFields = function () {
@@ -77,8 +77,8 @@ angular.module('myContacts.contacts', ['ngRoute', 'firebase'])
 		$scope.street_address = ''; 
 		$scope.city = ''; 
 		$scope.state = ''; 
-		$scope.zipcode = '' 
-	}
+		$scope.zipcode = '' ;
+	};
 
 	//https://mycontacts-angular-udemy.firebaseio.com/
 	$scope.showContactInfo = function (contact) {
@@ -96,12 +96,12 @@ angular.module('myContacts.contacts', ['ngRoute', 'firebase'])
 		$scope.isContactInfoShowing = true;
 
 		console.log('Getting contact info', $scope);
-	}
+	};
 
 	//
 	$scope.hideContactInfo = function () {
 		$scope.isContactInfoShowing = false;	
-	}
+	};
 
 	//
 	$scope.editFormSubmit = function () {
@@ -122,9 +122,9 @@ angular.module('myContacts.contacts', ['ngRoute', 'firebase'])
 		//Save contact:
 		$scope.contacts.$save(record).then(function (ref) {
 			console.log(ref.key);
-		})
+		});
 
-		clearFields();
+		//clearFields();
 		$scope.isEditContactShowing = false;
-	}
+	};
 }]);
